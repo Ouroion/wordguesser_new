@@ -19,7 +19,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Metrics/MethodLength:
-  Max: 5
+  Max: 10
 
 Security/IoMethods:
   Enabled: true
