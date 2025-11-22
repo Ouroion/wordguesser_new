@@ -20,3 +20,12 @@ Style/FrozenStringLiteralComment:
 
 Metrics/MethodLength:
   Max: 5
+
+Security/IoMethods:
+  Enabled: true
+
+Security/Open:
+  Enabled: true
+
+Security/YAMLLoad:
+  Enabled: true

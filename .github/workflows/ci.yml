@@ -106,3 +106,15 @@ jobs:
             echo "::error::RuboCop offenses ($COUNT) exceed threshold ($OFFENSE_THRESHOLD)."
             exit 1
           fi
+  sast:
+      name: RuboCop SAST Scan
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - name: Set up Ruby
+          uses: ruby/setup-ruby@v1
+          with:
+              ruby-version: '3.3'
+              bundler-cache: true
+        - name: Run RuboCop
+          run: bundle exec rubocop --format clang
