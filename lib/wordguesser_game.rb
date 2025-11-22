@@ -36,7 +36,7 @@ class WordGuesserGame
 
   # Get a word from remote "random word" service
 
-  def self.get_random_word
+  def self.random_word
     require 'uri'
     require 'net/http'
     uri = URI('http://randomword.saasbook.info/RandomWord')
