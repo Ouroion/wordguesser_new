@@ -3,8 +3,6 @@ name: CI / CD
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-      branches: [ "main" ]
 jobs:
   build:
     name: Build Docker image
@@ -129,6 +127,8 @@ jobs:
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v4
         with:
+            base-ref: 'main'
+            head-ref: '${{github.sha}}'
             fail-on-severity: critical
             allow-licenses: GPL-3.0, BSD-3-Clause, MIT
             config-file: './.github/dependency-review-config.yml'
